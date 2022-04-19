@@ -1,0 +1,4 @@
+*.cfg
+chromedriver
+*.dat
+LOG
