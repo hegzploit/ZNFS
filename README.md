@@ -21,3 +21,4 @@ ZNFS is still in it's early alpha stage and is barely usable, pull requests/coll
 - [x] configure through config.cfg
 - [ ] refactor for classes
 - [ ] type annotations for readability
+- [ ] concurrent model
