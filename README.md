@@ -5,8 +5,11 @@ ZNFS's Not a Facebook Scraper
 ZNFS will help you clean your Facebook account.
 It ultimately helps you in that by enforcing some criteria on your list of following/followers and removes those who don't meet this criteria.
 
+<<<<<<< HEAD
 ZNFS is still in it's early alpha stage and is barely usable, pull requests/collabs are welcome.
 
+=======
+>>>>>>> origin/main
 ## TODO
 - [ ] Scrapes
   - [x] Liked Pages
