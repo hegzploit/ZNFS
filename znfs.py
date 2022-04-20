@@ -49,6 +49,10 @@ def login(email_arg, passwd_arg):
     passwd.send_keys(passwd_arg)
     login_btn.click()
 
+def write_list_to_file(some_list: list, file_name: str) -> None:
+    with open(file_name, "w") as f:
+        f.write("\n".join(some_list))
+
 def scrape_liked_pages():
     global scraping_index
     driver.get(f"https://mbasic.facebook.com/yusufthehegazy?startindex={scraping_index}&v=likes&sectionid=9999")
@@ -66,11 +70,13 @@ def scrape_liked_pages():
             scraping_index += 11
             pickle.dump((scraping_index, liked_pages), open("cached_data.dat", "wb"))
             log.info(f"Scrapping, Index: {scraping_index}, Links Scrapped: {len(liked_pages)}")
+            sleep(10)
     except NoSuchElementException:
         if ("Blocked" in driver.page_source):
             log.info(f"Temporary blocked, sleeping for 15 mins...")
             sleep(60*15)
             scrape_liked_pages()
+
 
 def unlike_page(page_id):
     driver.get(f"https://mbasic.facebook.com/{page_id}")
